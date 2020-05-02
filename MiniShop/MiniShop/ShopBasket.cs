@@ -8,6 +8,20 @@ namespace MiniShop
 {
     class ShopBasket
     {
-        public List<Merchandise> listas { get; set; }
+        public Merchandise merchandise;
+        public int PurchaseAmount { get; private set; }
+
+        public ShopBasket(Merchandise merch)
+        {
+            merchandise = merch;
+            PurchaseAmount = 1;
+        }
+        public void ChangeAmount(int amount)
+        {
+            PurchaseAmount = amount;
+        }
+
+
+
     }
 }

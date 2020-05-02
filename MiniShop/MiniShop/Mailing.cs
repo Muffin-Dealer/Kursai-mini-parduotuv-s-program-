@@ -8,41 +8,48 @@ namespace MiniShop
 {
     class Mailing
     {
-        public void Internacional()
+        
+        public double MailingPrice(List<ShopBasket> basket, string sendVia)
         {
-
-        }
-        public void Courier()
-        {
-
-        }
-        public void Mail()
-        {
-
-        }
-        public void Terminal()
-        {
-
-        }
-        public double MailingPrice(ShopBasket basket)
-        {
-
-            return 0;
-        }
-        public string Size(ShopBasket basket)
-        {
-            double totalWeight = 0;
-            foreach (var item in basket.listas)
+            switch (sendVia)
             {
-                totalWeight += item.Weight;
+                case "International":
+                    return Size(basket, 7);
+                case "Courier":
+                    return Size(basket, 5);
+                case "Mail":
+                    return Size(basket, 1);
+                case "Terminal":
+                    return Size(basket, 2);
+                default:
+                    return Size(basket, 0);
             }
-            if (totalWeight < 15)
-                return "S";
-            else if (totalWeight > 50)
-                return "L";
-            else 
-                return "M";
+        }
 
+        public double Size(List<ShopBasket> basket,double intrest)
+        {
+            double price = 0;
+            double totalWeight = 0;
+            foreach (var item in basket)
+            {
+                price += item.merchandise.Price * item.PurchaseAmount;
+                totalWeight += item.merchandise.Weight * item.PurchaseAmount;
+            }
+            if (totalWeight < 12)
+            {
+                return price + intrest + (totalWeight * 0.08);
+
+            }
+            else if (totalWeight > 50)
+            {
+                return price + intrest + (totalWeight * 0.25);
+
+            }
+            else
+            {
+                return price + intrest + (totalWeight * 0.15);
+
+            }
         }
     }
 }
