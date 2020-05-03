@@ -1,4 +1,4 @@
-﻿LQ15B;Samtis;5.45;1.2
-AoQaQ;Hantelis;10.99;10
-LTESc;Kinder;1.2;0.4
+﻿LQ15B;Samtis;5,45;1,2
+AoQaQ;Hantelis;10,99;10
+LTESc;Kinder;1,2;0,4
 rQ1qB;Telikas;368;20

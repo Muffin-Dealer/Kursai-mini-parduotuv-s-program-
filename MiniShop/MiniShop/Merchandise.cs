@@ -15,18 +15,18 @@ namespace MiniShop
         public string Name { get; }
         public double Price { get; }
         public double Weight { get; }
-        public Image Image { get; }
+        public string ImagePath { get; set; }
 
         public Merchandise()
         {
         }
-        public Merchandise(string id, string name, double price, double weight, string path)
+        public Merchandise(string id, string name, double price, double weight)//, string path)
         {
             Id = id;
             Name = name;
             Price = price;
             Weight = weight;
-            this.Image = Image.FromFile(path);
+            //this.Image = Image.FromFile(path);
         }
 
 
