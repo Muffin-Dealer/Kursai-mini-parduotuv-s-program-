@@ -9,7 +9,7 @@ using System.Drawing;
 
 namespace MiniShop
 {
-    class Merchandise
+    public class Merchandise : Iitems
     {
         public string Id { get; }
         public string Name { get; }

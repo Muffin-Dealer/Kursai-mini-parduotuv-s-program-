@@ -12,9 +12,29 @@ namespace MiniShop
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        public List<ShopBasket> basket;
+        Mailing mail;
+        public Form2(List<ShopBasket> k)
         {
+            mail = new Mailing();
             InitializeComponent();
+            basket = k;
+            LoadBasket();
+            
+        }
+
+        private void LoadBasket()
+        {
+            dataGridView1.DataSource = basket;
+            dataGridView1.Columns["Id"].Visible = false;
+
+            Total.Text = (Math.Round(mail.MailingPrice(basket, " ")*100)/100).ToString();
+            
+        }
+
+        private void Order_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

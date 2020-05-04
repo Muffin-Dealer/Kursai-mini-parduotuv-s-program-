@@ -76,7 +76,7 @@ namespace MiniShop
             bool exist = false;
             foreach (var item in basket)
             {
-                if (item.merchandise == mer)
+                if (item.Name == mer.Name)
                     exist = true;
             }
             if(!exist)
@@ -89,7 +89,8 @@ namespace MiniShop
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Form2 BasketForm = new Form2(basket);
+            BasketForm.ShowDialog();
         }
     }
 }
